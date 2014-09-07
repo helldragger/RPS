@@ -1,0 +1,89 @@
+#
+#YAML pour MineCity et RolePlaySpeciality
+#
+
+
+name: RolePlaySpeciality
+main: helldragger.RolePlaySpeciality.RPSPlugin
+version: 1.5
+author: Helldragger (RolePlaySpeciality creator)
+softdepend: [WorldGuard, WGCustomFlags]
+ 
+commands:
+ 
+ rpreload:
+  description: Permet de relancer le plugin et de le remettre a zero sans couper le serveur.
+ rp:
+  description: Activation ou desactivation de la couleur de chat et de la distance de voix RP.
+ rp list:
+  aliases: rp l
+  description: Affiche une liste des ocouleurs possibles.
+ rp NomDeLaCouleurEnAnglais:
+  description: Change la couleur RP actuelle par celle ecrite.
+ do:
+  description: envoie un message dans les couleurs RP par defaut et entre etoiles RP et a une certaine distance seulement.
+ destin:
+  aliases: ds
+  description: Lance les des du destin et decide de la reussite ou non d'une action RP et en informe les personnes proches ou non.
+ loot:
+  aliases: lt
+  description: Comme pour les des du destin des actions, cette fois cela affiche un nombre aleatoire entre 1 et 100 afin de departager certains joueurs pour un loot par exemple
+ shout:
+  aliases: sh
+  description: Crie un message en couleurs RP, distance de voix doublee pour ce message. 
+ think:
+  aliases: th
+  description: Envoie une pensee dans le chat, a une certaine distance RP. 
+ spy:
+  description: Active le mode espions pour les modérateur afin de recevoir tous messages rp venant de partout sans limite de distance.
+ # playsess:
+ #  aliases: pls
+ #  description: montre les couleurs RP des joueurs connectes.
+ # rpenabled:
+ #  aliases: rpena
+ #  description: montre qui a le mode RP active.
+permissions:
+ roleplayspeciality.*:
+  description: Allows full plugin usage.
+  default: false
+  children:
+    roleplayspeciality.do: true
+    roleplayspeciality.think: true
+    roleplayspeciality.shout: true
+    roleplayspeciality.rp: true
+    roleplayspeciality.rpreload: true
+    roleplayspeciality.destin: true
+    roleplayspeciality.loot: true
+    roleplayspeciality.bypass: false
+    
+ roleplayspeciality.rp:
+  description: Allows full usage of the "/rp" command. Should never be false.
+  default: true
+  
+ roleplayspeciality.do:
+  description: Allows full usage of the "/do" command.
+  default: true
+  
+ roleplayspeciality.think:
+  description: Allows usage of the "/think" command.
+  default: true
+  
+ roleplayspeciality.shout:
+  description: Allows usage of the "/shout" command.
+  default: true
+  
+ roleplayspeciality.rpreload:
+  description: Allows usage of the "/rpreload" command. Admin-only recommended.
+  default: false
+  
+ roleplayspeciality.destin:
+  description: Allows usage of the "/destin" command.
+  default: true
+  
+ roleplayspeciality.loot:
+  description: Allows usage of the "/loot" command.
+  default: true
+ 
+ roleplayspeciality.bypass:
+  description: Allows usage of "/rp spy" command. Admin-only recommended.
+  default: false
